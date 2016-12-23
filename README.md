@@ -1,2 +1,2 @@
-# order_item_catalogrule
-Magento extension to provide ability to get original price in quote/order_item
+# Magento Order Item Original Price
+Saves original price to order for a nice view of discount created by catalogrule rule
