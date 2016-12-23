@@ -12,8 +12,10 @@ class Mygento_Originalprice_Model_Observer
     public function addToCartComplete($observer)
     {
         $item = $observer->getEvent()->getQuoteItem();
+        if (!is_object($item) || !$item instanceof Mage_Sales_Model_Quote_Item) {
+            return;
+        }
         $product = $observer->getEvent()->getProduct();
-        $item->setData('original_price', $product->getPrice());
-        $item->save();
+        $item->setData('original_product_price', $product->getPrice());
     }
 }
