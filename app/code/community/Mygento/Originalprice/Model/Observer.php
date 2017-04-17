@@ -16,6 +16,6 @@ class Mygento_Originalprice_Model_Observer
             return;
         }
         $product = $observer->getEvent()->getProduct();
-        $item->setData('original_product_price', $product->getPrice());
+        $item->setData('original_product_price', $product->getData('price'));
     }
 }
